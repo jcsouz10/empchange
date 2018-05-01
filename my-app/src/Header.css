@@ -1,0 +1,16 @@
+.header {
+    height: 70px;
+    background: rgba(5, 147, 230, 0.932);
+    display: flex;
+    justify-content: flex-start;
+}
+
+.nameApp{
+    color:white;
+    font-size: 30px;
+    padding-left: 20px;
+}
+
+.link{
+    text-decoration:none;      
+}
