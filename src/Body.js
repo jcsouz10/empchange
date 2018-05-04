@@ -14,8 +14,8 @@ class Body extends React.Component {
 
   getName = () => {
     const { employee, add } = this.props;
-    const {employeeBody} = this.state;
-    return employee.map(name => (
+    const {input} = this.state;
+    return employee.filter(employee => employee.name.includes(input)).map(name => (
       <div className='item'>
         <Link className="link" to={`/user/${name.id}`}>
           <div onClick={() => add(name)} key={name.id}>
@@ -33,16 +33,6 @@ class Body extends React.Component {
   getValueInput = (evt) => {
     const inputValue = evt.target.value;
     this.setState({ input: inputValue });
-    this.filterNames(inputValue);
-    console.log(this.state.employeeBody)
-  }
-
-  filterNames (inputValue) {
-  const { employee } = this.props;
-  this.setState({
-    employeeBody: employee.filter(item => 
-       item.name.includes(inputValue))
-  });
   }
 
   render() {
@@ -52,7 +42,7 @@ class Body extends React.Component {
         {this.getName()}
       </div> 
       <div className='input'>
-        <input type="text" onChange={this.getValueInput} /> 
+        <input placeholder='Search name here' type="text" onChange={this.getValueInput} /> 
       </div>
     </div>
     )
