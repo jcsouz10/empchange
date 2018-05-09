@@ -19,6 +19,8 @@ class AppRouter extends React.Component {
       .then(response => this.setState({ employee: response.data }));
   }
 
+
+  // trocar essa linha;
   add = name => {
     this.setState(prevState => {
       const copy = prevState.employeeCurrent.slice(1);

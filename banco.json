@@ -7,9 +7,9 @@
       "position": "Young Apprendice",
       "manager": "abelc@br.ibm.com",
       "site": "Pasteur",
-      "cellphone": "(55 21) 96503-4468",
-      "url_git": "https://www.w3schools.com/js/tryit.asp?filename=tryjs_prompt",
-      "end_day": "06/15/2018"
+      "cellphone": "(21) 0000-0000",
+      "url_git": "www.google.com.br",
+      "end_day": "dddddddddddddddd"
     },
     {
       "id": 201,
@@ -18,9 +18,9 @@
       "position": "Analyst",
       "manager": "abelc@br.ibm.com",
       "site": "Pasteur",
-      "cellphone": "(55 21) 96503-4468",
-      "url_git": "jdksajdkajda",
-      "end_day": "06/15/2018"
+      "cellphone": null,
+      "url_git": "",
+      "end_day": "fffffffffff"
     },
     {
       "id": 203,
@@ -29,8 +29,8 @@
       "position": "Web Developer",
       "manager": "abelc@br.ibm.com",
       "site": "Pasteur",
-      "cellphone": "(55 21) 96503-4468",
-      "url_git": "Jean",
+      "cellphone": null,
+      "url_git": "www.google.com.br",
       "end_day": "06/15/2018"
     },
     {
@@ -41,7 +41,7 @@
       "manager": "abelc@br.ibm.com",
       "site": "Pasteur",
       "cellphone": "(55 21) 96503-4468",
-      "url_git": "Joao",
+      "url_git": null,
       "end_day": "06/15/2018"
     },
     {
@@ -52,7 +52,7 @@
       "manager": "abelc@br.ibm.com",
       "site": "Pasteur",
       "cellphone": "(55 21) 96503-4468",
-      "url_git": "Catsan09iest cat in town!",
+      "url_git": "Jeanzao",
       "end_day": "06/15/2018"
     },
     {
