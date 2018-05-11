@@ -5,12 +5,14 @@ import axios from 'axios';
 import Body from './Body';
 import User from './User';
 import Header from './Header';
+import Login from './Login';
 
 
 class AppRouter extends React.Component {
   state = {
     employeeCurrent: [],
-    employee: []
+    employee: [],
+    currentManager: '',
   };
 
   componentDidMount() {
@@ -19,8 +21,12 @@ class AppRouter extends React.Component {
       .then(response => this.setState({ employee: response.data }));
   }
 
+  currentManager = e => {
+    this.setState({
+      currentManager: e,
+    })
+  }
 
-  // trocar essa linha;
   add = name => {
     this.setState(prevState => {
       const copy = prevState.employeeCurrent.slice(1);
@@ -35,28 +41,34 @@ class AppRouter extends React.Component {
     return (
       <Router>
         <div className="router">
-        <Header />
+          <Header />
           <Route
             exact
             path="/"
+            render={props => (
+              <Login
+                {...props}
+                currentManager={this.currentManager}
+              />
+            )}
+          />
+          <Route
+            exact
+            path="/home"
             render={props => (
               <Body
                 {...props}
                 add={this.add}
                 employee={this.state.employee}
                 employeeCurrent={this.state.employeeCurrent}
+                currentManager={this.state.currentManager}
+
               />
             )}
           />
           <Route
             path="/user/:id"
-            component={props => (
-              <User
-                {...props}
-                employee={this.state.employee}
-                employeeCurrent={this.state.employeeCurrent}
-              />
-            )}
+            component={User}
           />
         </div>
       </Router>

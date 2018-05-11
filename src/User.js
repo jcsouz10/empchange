@@ -13,7 +13,8 @@ class User extends React.Component {
 
       inputValueGit: '',
       inputValueCell: '',
-      inputValueDate: ''
+      inputValueDate: '',
+      user: {},
     }
   }
 
@@ -81,6 +82,10 @@ class User extends React.Component {
       .catch(error => {
         console.log(error);
       });
+
+    this.setState({
+      dateShowInput: false
+    })
   }
 
   changeDate = e => {
@@ -102,26 +107,35 @@ class User extends React.Component {
   };
 
   render() {
-    return <div className='render'>
-      {this.props.employeeCurrent.map(name => <div>
-        <div className='profile'>
-          <img className="img2" src={`https://picsum.photos/${name.id}`} />
-          <div className='name'>
-            <h3>{name.name}</h3>
-            <p> {name.position} </p>
+    return null;
+
+    return (
+      <div className='render'>
+        <div>
+          <div className='profile'>
+            <img className="img2" src={`https://picsum.photos/${this.state.user.id}`} />
+            <div className='name'>
+              <h3>{name.name}</h3>
+              <p> {name.position} </p>
+            </div>
+          </div>
+          <div className='container'>
+            <div className='item2'>   Manager: {name.manager} </div>
+            <div className='item2'>   Site: {name.site} </div>
+            <div className='item2'>   Start Day: {name.start_day} </div>
+            <div className='item2'>   GitHub:<a className='item2Link' href={`http://${name.url_git}`} target="_blank"> {name.url_git} </a> <button onClick={this.editGit}> Edit </button> {this.state.gitShowInput && <div> <input onChange={this.changeGit} value={this.state.inputValueGit} /> <button onClick={this.onSubmitGit} id={name.id} value={name.id}> Send </button></div>} </div>
+            <div className='item2'>   CellPhone: {name.cellphone} <button onClick={this.editCell}> Edit </button> {this.state.cellShowInput && <div><input onChange={this.changeCell} value={this.state.inputValueCell} /> <button onClick={this.onSubmitCell} id={name.id} value={name.id}> Send </button></div>}   </div>
+            <div className='item2'>   End Day: {name.end_day} <button onClick={this.editDate}> Edit </button> {this.state.dateShowInput && <div><input onChange={this.changeDate} value={this.state.inputValueDate} /> <button onClick={this.onSubmitDate} id={name.id} value={name.id}> Send </button></div>}  </div>
           </div>
         </div>
-        <div className='container'>
-          <div className='item2'>   Manager: {name.manager} </div>
-          <div className='item2'>   Site: {name.site} </div>
-          <div className='item2'>   Start Day: {name.start_day} </div>
-          <div className='item2'>   GitHub:<a className='item2Link' href={`http://${name.url_git}`} target="_blank"> {name.url_git} </a> <button onClick={this.editGit}> Edit </button> {this.state.gitShowInput && <div> <input onChange={this.changeGit} value={this.state.inputValueGit} /> <button onClick={this.onSubmitGit} id={name.id} value={name.id}> Send </button></div>} </div>
-          <div className='item2'>   CellPhone: {name.cellphone} <button onClick={this.editCell}> Edit </button> {this.state.cellShowInput && <div><input onChange={this.changeCell} value={this.state.inputValueCell} /> <button onClick={this.onSubmitCell} id={name.id} value={name.id}> Send </button></div>}   </div>
-          <div className='item2'>   End Day: {name.end_day} <button onClick={this.editDate}> Edit </button> {this.state.dateShowInput && <div><input onChange={this.changeDate} value={this.state.inputValueDate} /> <button onClick={this.onSubmitDate} id={name.id} value={name.id}> Send </button></div>}  </div>
-        </div>
-      </div>)}
-      {console.log(this.props.employeeCurrent)}
-    </div>;
+      </div>
+    );
+  }
+
+  componentDidMount() {
+    console.log('Loaded User');
+    console.log(this.props.match.params.id);
+    //// fazer um axios com get e setstate para user
   }
 }
 export default User; 

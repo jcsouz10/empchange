@@ -7,7 +7,6 @@ class Body extends React.Component {
     super(props);
     this.state = {
       input: "",
-      employeeBody: this.props.employee,
     }
   }
 
@@ -36,8 +35,10 @@ class Body extends React.Component {
   }
 
   render() {
+    const {currentManager} = this.props;
     return (
     <div>
+      <h4 className="manager"> Hello {this.props.currentManager}, here be all employees available for change. </h4>
       <div className="body">
         {this.getName()}
       </div> 

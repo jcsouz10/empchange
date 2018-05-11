@@ -18,9 +18,9 @@
       "position": "Analyst",
       "manager": "abelc@br.ibm.com",
       "site": "Pasteur",
-      "cellphone": null,
-      "url_git": "",
-      "end_day": "fffffffffff"
+      "cellphone": "(21) 0000-0000",
+      "url_git": "www.google.com.br",
+      "end_day": "1/0=∞"
     },
     {
       "id": 203,
@@ -41,7 +41,7 @@
       "manager": "abelc@br.ibm.com",
       "site": "Pasteur",
       "cellphone": "(55 21) 96503-4468",
-      "url_git": null,
+      "url_git": "www.google.com.br",
       "end_day": "06/15/2018"
     },
     {

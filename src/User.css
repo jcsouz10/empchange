@@ -28,8 +28,8 @@
 .container {
 	margin: 0 auto;
 	display: flex;
-    border: 1px solid white;
-    flex-direction: column;
+  border: 1px solid white;
+  flex-direction: column;
 }    
 
 .item2 {

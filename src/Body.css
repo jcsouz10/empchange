@@ -11,6 +11,8 @@
     font-size: 1.5em;
     border-bottom: 6px solid rgba(0, 26, 255, 0.993);
     background-color: rgba(0, 101, 253, 0.507);
+    height: 180px;
+    width: 200px;
 }
 
 .img {
@@ -27,4 +29,7 @@
 
 .input {
 text-align: center
+}
+.manager{
+  text-align: center;
 }

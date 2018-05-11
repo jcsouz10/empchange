@@ -1,0 +1,28 @@
+.login{
+    height: 400px;
+    width: 400px;
+    flex-direction: column;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;    
+    border-right: 6px solid rgba(0, 26, 255, 0.993);
+    border-bottom: 6px solid rgba(0, 26, 255, 0.993);
+    background-color: rgba(0, 101, 253, 0.507);
+    border:50% ;
+    color: white;
+    
+}
+
+.itemLogin {
+  height: 30px;
+  width: 200px;
+  margin: 10px;
+  text-align: center;
+}
+
+.bodyLogin {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
