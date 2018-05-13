@@ -53,7 +53,9 @@ class User extends React.Component {
       url_git: inputValueGit
     })
       .then(response => {
-        console.log(response.data);
+        this.setState({
+          user: response.data
+        })
       })
       .catch(error => {
         console.log(error);
@@ -70,13 +72,15 @@ class User extends React.Component {
       cellphone: inputValueCell
     })
       .then(response => {
-        console.log(response.data);
+        this.setState({
+          user: response.data
+        })
       })
       .catch(error => {
         console.log(error);
       });
     this.setState({
-      cellShowInput: !this.state.cellShowInput
+      cellShowInput: false
     })
   }
 
@@ -87,7 +91,9 @@ class User extends React.Component {
       end_day: inputValueDate
     })
       .then(response => {
-        console.log(response.data);
+        this.setState({
+          user: response.data
+        })
       })
       .catch(error => {
         console.log(error);
@@ -118,6 +124,7 @@ class User extends React.Component {
 
   render() {
     return (
+      <div className='testeRender'>
       <div className='render'>
         <div>
           <div className='profile'>
@@ -131,11 +138,12 @@ class User extends React.Component {
             <div className='item2'>   Manager: {this.state.user.manager} </div>
             <div className='item2'>   Site: {this.state.user.site} </div>
             <div className='item2'>   Start Day: {this.state.user.start_day} </div>
-            <div className='item2'>   GitHub:<a className='item2Link' oi target="_blank"> {this.state.user.url_git} </a> <button onClick={this.editGit}> Edit </button> {this.state.gitShowInput && <div> <input onChange={this.changeGit} value={this.state.inputValueGit} /> <button onClick={this.onSubmitGit} id={this.state.user.id} value={this.state.user.id}> Send </button></div>} </div>
+            <div className='item2'>   GitHub:<a className='item2Link' href={`http://${this.state.user.url_git}`} target="_blank"> {this.state.user.url_git} </a> <button onClick={this.editGit}> Edit </button> {this.state.gitShowInput && <div> <input onChange={this.changeGit} value={this.state.inputValueGit} /> <button onClick={this.onSubmitGit} id={this.state.user.id} value={this.state.user.id}> Send </button></div>} </div>
             <div className='item2'>   CellPhone: {this.state.user.cellphone}<button onClick={this.editCell}> Edit </button> {this.state.cellShowInput && <div><input onChange={this.changeCell} value={this.state.inputValueCell} /> <button onClick={this.onSubmitCell} id={this.state.user.id} value={this.state.user.id}> Send </button></div>}   </div>
             <div className='item2'>   End Day: {this.state.user.end_day} <button onClick={this.editDate}> Edit </button> {this.state.dateShowInput && <div><input onChange={this.changeDate} value={this.state.inputValueDate} /> <button onClick={this.onSubmitDate} id={this.state.user.id} value={this.state.user.id}> Send </button></div>}  </div>
           </div>
         </div>
+      </div>
       </div>
     );
   }

@@ -7,9 +7,9 @@
       "position": "Young Apprendice",
       "manager": "abelc@br.ibm.com",
       "site": "Pasteur",
-      "cellphone": "dd",
-      "url_git": "dd",
-      "end_day": "dd"
+      "cellphone": "",
+      "url_git": "Jean",
+      "end_day": ""
     },
     {
       "id": 201,
@@ -29,7 +29,7 @@
       "position": "Web Developer",
       "manager": "abelc@br.ibm.com",
       "site": "Pasteur",
-      "cellphone": null,
+      "cellphone": "21212",
       "url_git": "www.google.com.br",
       "end_day": "06/15/2018"
     },
