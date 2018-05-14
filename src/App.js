@@ -13,7 +13,7 @@ class AppRouter extends React.Component {
           <Header />
           <Route
             exact
-            path="/home"
+            path="/"
             component={Body}
           />
           <Route

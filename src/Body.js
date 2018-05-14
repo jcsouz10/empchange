@@ -2,6 +2,7 @@ import React from 'react';
 import './Body.css';
 import { Link } from "react-router-dom";
 import axios from 'axios';
+import Filter from './Filter';
 
 class Body extends React.Component {
   constructor(props) {
@@ -12,21 +13,19 @@ class Body extends React.Component {
     }
   }
 
-
   componentDidMount() {
     axios
       .get("http://127.0.0.1:3004/employee")
       .then(response => this.setState({ employee: response.data }));
   }
 
-
   getName = () => {
     const { employee, add } = this.state;
-    const {input} = this.state;
+    const { input } = this.state;
     return employee.filter(employee => employee.name.includes(input)).map(name => (
       <div className='item' key={name.id}>
         <Link className="link" to={`/user/${name.id}`}>
-          <div onClick={() => add(name)} key={name.id}>
+          <div key={name.id}>
             <img className="img" alt="imgstatic"
               src={`https://picsum.photos/${name.id}`}
             />
@@ -45,17 +44,25 @@ class Body extends React.Component {
 
   render() {
     return (
-    <div>
-      <h4 className="manager"> Hello {this.props.currentManager}, here be all employees available for change. </h4>
-      <div className="body">
-        {this.getName()}
-      </div> 
-      <div className='input'>
-        <input placeholder='Search name here' type="text" onChange={this.getValueInput} /> 
+      <div>
+        <h4 className="manager"> Hello {this.props.currentManager}, here be all employees available for change. </h4>
+        <div className="body">
+          {this.getName()}
+        </div>
+        <div className='input'>
+          <Filter render={this.getName} />
+        </div>
       </div>
-    </div>
     )
   }
 }
 
 export default Body;
+
+/**       
+ * 
+ * <div>
+    <Filter render={this.getName} />
+  </div>
+      
+*/
