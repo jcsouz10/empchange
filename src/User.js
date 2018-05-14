@@ -128,7 +128,7 @@ class User extends React.Component {
       <div className='render'>
         <div>
           <div className='profile'>
-            <img className="img2" src={`https://picsum.photos/${this.state.user.id}`} />
+            <img className="img2" alt='imgstatic'src={`https://picsum.photos/${this.state.user.id}`} />
             <div className='name'>
               <h3>{this.state.user.name}</h3>
               <p>{this.state.user.position}</p>

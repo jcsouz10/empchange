@@ -1,24 +1,33 @@
 import React from 'react';
 import './Body.css';
 import { Link } from "react-router-dom";
+import axios from 'axios';
 
 class Body extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       input: "",
+      employee: []
     }
   }
 
 
+  componentDidMount() {
+    axios
+      .get("http://127.0.0.1:3004/employee")
+      .then(response => this.setState({ employee: response.data }));
+  }
+
+
   getName = () => {
-    const { employee, add } = this.props;
+    const { employee, add } = this.state;
     const {input} = this.state;
     return employee.filter(employee => employee.name.includes(input)).map(name => (
-      <div className='item'>
+      <div className='item' key={name.id}>
         <Link className="link" to={`/user/${name.id}`}>
           <div onClick={() => add(name)} key={name.id}>
-            <img className="img"
+            <img className="img" alt="imgstatic"
               src={`https://picsum.photos/${name.id}`}
             />
           </div>
@@ -35,7 +44,6 @@ class Body extends React.Component {
   }
 
   render() {
-    const {currentManager} = this.props;
     return (
     <div>
       <h4 className="manager"> Hello {this.props.currentManager}, here be all employees available for change. </h4>
