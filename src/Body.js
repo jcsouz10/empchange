@@ -19,10 +19,10 @@ class Body extends React.Component {
       .then(response => this.setState({ employee: response.data }));
   }
 
-  getName = () => {
-    const { employee, add } = this.state;
+  getName = (filter) => {
+    const { employee } = this.state;
     const { input } = this.state;
-    return employee.filter(employee => employee.name.includes(input)).map(name => (
+    return employee.filter(employee => employee.name.includes(filter)).map(name => (
       <div className='item' key={name.id}>
         <Link className="link" to={`/user/${name.id}`}>
           <div key={name.id}>
