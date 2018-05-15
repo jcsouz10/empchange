@@ -11,15 +11,8 @@ class AppRouter extends React.Component {
       <Router>
         <div className="router">
           <Header />
-          <Route
-            exact
-            path="/"
-            component={Body}
-          />
-          <Route
-            path="/user/:id"
-            component={User}
-          />
+          <Route exact path="/" component={Body} />
+          <Route path="/user/:id" component={User} />
         </div>
       </Router>
     );

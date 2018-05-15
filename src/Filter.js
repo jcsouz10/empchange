@@ -12,11 +12,8 @@ class Filter extends React.Component {
   }
 
   getValueInput = (evt) => {
-    const inputValue = evt.target.value;
-    this.setState({ input: inputValue });
-    console.log();
-
-    console.log(this.state.input)
+    const input = evt.target.value;
+    this.setState({ input });
   }
 
 
@@ -26,7 +23,7 @@ class Filter extends React.Component {
         <div className="bodyFilter">
           {this.props.render(this.state.input)}
         </div>
-          <input placeholder='Search name here' type="text" onChange={this.getValueInput} />
+        <input placeholder='Search name here' type="text" onChange={this.getValueInput} />
       </div>
     )
   }
