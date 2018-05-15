@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import './Employee.css';
 
 class Employee extends React.Component {
-      getName = (filter) => {
-    const { employee } = this.props;
+      getName = () => {
+    const { employee, filter } = this.props;
     return employee.filter(employee => employee.name.includes(filter)).map(name => (
       <div className='item' key={name.id}>
         <Link className="link" to={`/user/${name.id}`}>
@@ -18,10 +19,8 @@ class Employee extends React.Component {
   render () {
     const {render} = this.props
     return(
-      <div>
-        {
-         render(this.getName())
-          }
+      <div className='bodyEmployee'>
+        {this.getName()}
       </div>
     )
   }
