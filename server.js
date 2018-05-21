@@ -16,5 +16,5 @@ app.use('/api', rotas);
 app.use(express.static(__dirname + './src'))
 
 app.listen(port,()=>{
-    console.log('Server working in the port 3001')
+    console.log('Server rodando na porta 3001')
 });
