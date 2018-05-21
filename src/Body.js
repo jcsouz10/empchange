@@ -14,8 +14,8 @@ class Body extends React.Component {
 
   componentDidMount() {
     axios
-      .get("http://127.0.0.1:3004/employee")
-      .then(response => this.setState({ employee: response.data }));
+      .get("/names")
+      .then(response => console.log(response.data));
   }
 
   render() {

@@ -1,11 +1,20 @@
-var express = require('express');
-var jsonServer = require('json-server');
+const express = require ('express');
+const bodyparser = require ('body-parser');
+const port = 3001;
+const rotas = require ('./rotas');
 
-var server = express();
- 
-server.use('/api', jsonServer.router('banco.json'));
+const app = express();
 
-server.listen(9000)
+app.get('/', (req, res)=>{
+    res.send('Hello')
+})
 
+app.use(bodyparser.json());
+app.use(bodyparser.urlencoded({extended:false}));
+app.use('/api', rotas);
 
-console.log('running')
+app.use(express.static(__dirname + './src'))
+
+app.listen(port,()=>{
+    console.log('Server working in the port 3001')
+});
