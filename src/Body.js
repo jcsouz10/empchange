@@ -15,7 +15,9 @@ class Body extends React.Component {
   componentDidMount() {
     axios
       .get("/names")
-      .then(response => console.log(response.data));
+      .then(response => this.setState({
+        employee: response.data.employee
+      }));
   }
 
   render() {
