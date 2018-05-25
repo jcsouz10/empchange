@@ -87,7 +87,7 @@ class User extends React.Component {
   onSubmitDate = event => {
     const { inputValueDate } = this.state;
     const personCurrent = event.target.value;
-    axios.patch(`http://localhost:3004/employee/${personCurrent}`, {
+    axios.patch(`name/${personCurrent}`, {
       end_day: inputValueDate
     })
       .then(response => {
